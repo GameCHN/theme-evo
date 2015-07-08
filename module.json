@@ -1,0 +1,15 @@
+{
+    "name": "Evo",
+    "alias": "evo",
+    "description": "",
+    "keywords": [],
+    "active": 1,
+    "order": 0,
+    "providers": [
+        "YC\\Evo\\Providers\\EvoServiceProvider"
+    ],
+    "aliases":{},
+    "files": [
+        "start.php"
+    ]
+}
