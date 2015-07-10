@@ -2,6 +2,7 @@
     "name": "Evo",
     "alias": "evo",
     "description": "",
+    "type":"theme",
     "keywords": [],
     "active": 1,
     "order": 0,
