@@ -56,12 +56,12 @@
                 @else
                     @define $req = get_option('require_name_email')
                     <div class="form-group">
-                        <label for="author">{{ _e('Name', 'cutlass'); if ($req) _e(' (required)', 'cutlass') }}</label>
-                        <input type="text" class="form-control" name="author" id="author" size="22" @if($req) echo 'aria-required="true"'; @endif>
+                        <label for="author">{{ _e('Name', 'cutlass') }} {{ $req ? _e(' (required)', 'cutlass') : '' }}</label>
+                        <input type="text" class="form-control" name="author" id="author" size="22" {{ $req ? 'aria-required="true"' : '' }}>
                     </div>
                     <div class="form-group">
-                        <label for="email">{{ _e('Email (will not be published)', 'cutlass'); if ($req) _e(' (required)', 'cutlass') }}</label>
-                        <input type="email" class="form-control" name="email" id="email" size="22" @if ($req) echo 'aria-required="true"'; @endif>
+                        <label for="email">{{ _e('Email (will not be published)', 'cutlass') }}  {{ $req ? _e(' (required)', 'cutlass') : '' }}</label>
+                        <input type="email" class="form-control" name="email" id="email" size="22" {{ $req ? 'aria-required="true"' : '' }}>
                     </div>
                     <div class="form-group">
                         <label for="url">{{ _e('Website', 'cutlass') }}</label>
