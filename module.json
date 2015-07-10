@@ -2,9 +2,9 @@
     "name": "Evo",
     "alias": "evo",
     "description": "",
-    "type":"theme",
     "keywords": [],
     "active": 1,
+    "type":"theme",
     "order": 0,
     "providers": [
         "YC\\Evo\\Providers\\EvoServiceProvider"

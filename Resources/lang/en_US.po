@@ -1,0 +1,698 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: cutlass\n"
+"POT-Creation-Date: 2015-04-20 18:41+0800\n"
+"PO-Revision-Date: 2015-04-20 18:44+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;printf;sprintf;_\n"
+"X-Poedit-SearchPath-0: ..\n"
+"X-Poedit-SearchPathExcluded-0: ../vendor\n"
+"X-Poedit-SearchPathExcluded-1: ../src\n"
+"X-Poedit-SearchPathExcluded-2: ../static\n"
+
+#: ../__functions.php:29 ../functions.php:85
+#, php-format
+msgid "Error locating %s for inclusion"
+msgstr ""
+
+#: ../custom_post/post_contact.php:25
+msgctxt "添加新内容的链接名称"
+msgid "新建"
+msgstr ""
+
+#: ../custom_post/post_contact.php:26
+msgid "新建一个"
+msgstr ""
+
+#: ../custom_post/post_contact.php:27
+msgid "编辑"
+msgstr ""
+
+#: ../custom_post/post_contact.php:28
+msgid "新"
+msgstr ""
+
+#: ../custom_post/post_contact.php:29
+msgid "全部"
+msgstr ""
+
+#: ../custom_post/post_contact.php:30
+msgid "查看"
+msgstr ""
+
+#: ../custom_post/post_contact.php:31
+#: ../templates/common/site-header.blade.php:43
+msgid "搜索"
+msgstr ""
+
+#: ../custom_post/post_contact.php:32
+msgid "没有找到有关"
+msgstr ""
+
+#: ../custom_post/post_contact.php:33
+msgid "回收站里面没有相关"
+msgstr ""
+
+#: ../custom_post/post_contact.php:50
+msgctxt "taxonomy 名称"
+msgid "分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:51
+msgctxt "taxonomy 单数名称"
+msgid "分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:52
+msgid "搜索分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:53
+msgid "所有分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:54 ../custom_post/post_contact.php:55
+msgid "该"
+msgstr ""
+
+#: ../custom_post/post_contact.php:56
+msgid "编辑分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:57
+msgid "更新分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:58
+msgid "添加新分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:59
+msgid "新分类"
+msgstr ""
+
+#: ../custom_post/post_contact.php:60
+msgid "分类"
+msgstr ""
+
+#: ../functions.php:11
+msgid "topnav"
+msgstr ""
+
+#: ../inc/activation.php:28 ../inc/activation.php:29
+msgid "Theme Activation"
+msgstr ""
+
+#: ../inc/activation.php:50
+#, php-format
+msgid "%s Theme Activation"
+msgstr ""
+
+#: ../inc/activation.php:52
+msgid ""
+"These settings are optional and should usually be used only on a fresh "
+"installation"
+msgstr ""
+
+#: ../inc/activation.php:59 ../inc/activation.php:62
+msgid "Create static front page?"
+msgstr ""
+
+#: ../inc/activation.php:64 ../inc/activation.php:76
+#: ../inc/activation.php:88 ../inc/activation.php:100
+msgid "Yes"
+msgstr ""
+
+#: ../inc/activation.php:65 ../inc/activation.php:77
+#: ../inc/activation.php:89 ../inc/activation.php:101
+msgid "No"
+msgstr ""
+
+#: ../inc/activation.php:67
+msgid "Create a page called Home and set it to be the static front page"
+msgstr ""
+
+#: ../inc/activation.php:71
+msgid "Change permalink structure?"
+msgstr ""
+
+#: ../inc/activation.php:74
+msgid "Update permalink structure?"
+msgstr ""
+
+#: ../inc/activation.php:79
+msgid "Change permalink structure to /&#37;postname&#37;/"
+msgstr ""
+
+#: ../inc/activation.php:83 ../inc/activation.php:86
+msgid "Create navigation menu?"
+msgstr ""
+
+#: ../inc/activation.php:91
+msgid "Create the Primary Navigation menu and set the location"
+msgstr ""
+
+#: ../inc/activation.php:95 ../inc/activation.php:98
+msgid "Add pages to menu?"
+msgstr ""
+
+#: ../inc/activation.php:103
+msgid "Add all current published pages to the Primary Navigation"
+msgstr ""
+
+#: ../inc/activation.php:126 ../inc/activation.php:147
+msgid "Home"
+msgstr ""
+
+#: ../inc/activation.php:173 ../inc/activation.php:176
+#: ../inc/activation.php:190 ../inc/init.php:13
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../inc/comments.php:35
+#, php-format
+msgid "%1$s"
+msgstr ""
+
+#: ../inc/comments.php:36
+msgid "(Edit)"
+msgstr ""
+
+#: ../inc/comments.php:40
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: ../inc/extras.php:6
+msgid "Continued"
+msgstr ""
+
+#: ../inc/gallery.php:52
+#, php-format
+msgid "col-sm-%1$s col-lg-%1$s"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:91
+#: ../inc/includes/class-options-framework-admin.php:92
+msgid "Theme Options"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:204
+msgid "Click OK to reset. Any theme settings will be lost!"
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:235
+msgid "Default options restored."
+msgstr ""
+
+#: ../inc/includes/class-options-framework-admin.php:289
+msgid "Options saved."
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:62
+msgid "No file chosen"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:65
+#: ../inc/includes/class-options-media-uploader.php:118
+msgid "Upload"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:67
+#: ../inc/includes/class-options-media-uploader.php:119
+msgid "Remove"
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:70
+msgid "Upgrade your version of WordPress for full media support."
+msgstr ""
+
+#: ../inc/includes/class-options-media-uploader.php:94
+msgid "View File"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:316
+msgid "No Repeat"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:317
+msgid "Repeat Horizontally"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:318
+msgid "Repeat Vertically"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:319
+msgid "Repeat All"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:331
+msgid "Top Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:332
+msgid "Top Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:333
+msgid "Top Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:334
+msgid "Middle Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:335
+msgid "Middle Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:336
+msgid "Middle Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:337
+msgid "Bottom Left"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:338
+msgid "Bottom Center"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:339
+msgid "Bottom Right"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:351
+msgid "Scroll Normally"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:352
+msgid "Fixed in Place"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:424
+msgid "Normal"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:425
+msgid "Italic"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:426
+msgid "Bold"
+msgstr ""
+
+#: ../inc/includes/class-options-sanitization.php:427
+msgid "Bold Italic"
+msgstr ""
+
+#: ../inc/init.php:40
+msgid "Primary"
+msgstr ""
+
+#: ../inc/init.php:49
+msgid "Footer"
+msgstr ""
+
+#: ../inc/titles.php:10
+msgid "Latest Posts"
+msgstr ""
+
+#: ../inc/titles.php:19
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: ../inc/titles.php:21
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: ../inc/titles.php:23
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: ../inc/titles.php:26
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: ../inc/titles.php:31
+#, php-format
+msgid "Search Results for %s"
+msgstr ""
+
+#: ../inc/titles.php:33
+msgid "Not Found"
+msgstr ""
+
+#: ../option.php:81
+msgid "One"
+msgstr ""
+
+#: ../option.php:82
+msgid "Two"
+msgstr ""
+
+#: ../option.php:83
+msgid "Three"
+msgstr ""
+
+#: ../option.php:84
+msgid "Four"
+msgstr ""
+
+#: ../option.php:85
+msgid "Five"
+msgstr ""
+
+#: ../option.php:90
+msgid "French Toast"
+msgstr ""
+
+#: ../option.php:91
+msgid "Pancake"
+msgstr ""
+
+#: ../option.php:92
+msgid "Omelette"
+msgstr ""
+
+#: ../option.php:93
+msgid "Crepe"
+msgstr ""
+
+#: ../option.php:94
+msgid "Waffle"
+msgstr ""
+
+#: ../option.php:156
+msgid "Basic Settings"
+msgstr ""
+
+#: ../option.php:161
+msgid "Input Text Mini"
+msgstr ""
+
+#: ../option.php:162
+msgid "A mini text input field."
+msgstr ""
+
+#: ../option.php:170
+msgid "Input Text"
+msgstr ""
+
+#: ../option.php:171
+msgid "A text input field."
+msgstr ""
+
+#: ../option.php:178
+msgid "Input with Placeholder"
+msgstr ""
+
+#: ../option.php:179
+msgid "A text input field with an HTML5 placeholder."
+msgstr ""
+
+#: ../option.php:186
+msgid "Textarea"
+msgstr ""
+
+#: ../option.php:187
+msgid "Textarea description."
+msgstr ""
+
+#: ../option.php:194
+msgid "Input Select Small"
+msgstr ""
+
+#: ../option.php:195
+msgid "Small Select Box."
+msgstr ""
+
+#: ../option.php:204
+msgid "Input Select Wide"
+msgstr ""
+
+#: ../option.php:205
+msgid "A wider select box."
+msgstr ""
+
+#: ../option.php:214
+msgid "Select a Category"
+msgstr ""
+
+#: ../option.php:215
+msgid "Passed an array of categories with cat_ID and cat_name"
+msgstr ""
+
+#: ../option.php:224
+msgid "Select a Tag"
+msgstr ""
+
+#: ../option.php:225
+msgid "Passed an array of tags with term_id and term_name"
+msgstr ""
+
+#: ../option.php:233
+msgid "Select a Page"
+msgstr ""
+
+#: ../option.php:234
+msgid "Passed an pages with ID and post_title"
+msgstr ""
+
+#: ../option.php:241
+msgid "Input Radio (one)"
+msgstr ""
+
+#: ../option.php:242
+msgid "Radio select with default options \"one\"."
+msgstr ""
+
+#: ../option.php:250
+msgid "Example Info"
+msgstr ""
+
+#: ../option.php:251
+msgid "This is just some example information you can put in the panel."
+msgstr ""
+
+#: ../option.php:256
+msgid "Input Checkbox"
+msgstr ""
+
+#: ../option.php:257
+msgid "Example checkbox, defaults to true."
+msgstr ""
+
+#: ../option.php:264
+msgid "Advanced Settings"
+msgstr ""
+
+#: ../option.php:269
+msgid "Check to Show a Hidden Text Input"
+msgstr ""
+
+#: ../option.php:270
+msgid "Click here and see what happens."
+msgstr ""
+
+#: ../option.php:276
+msgid "Hidden Text Input"
+msgstr ""
+
+#: ../option.php:277
+msgid "This option is hidden unless activated by a checkbox click."
+msgstr ""
+
+#: ../option.php:285
+msgid "Uploader Test"
+msgstr ""
+
+#: ../option.php:286
+msgid "This creates a full size uploader that previews the image."
+msgstr ""
+
+#: ../option.php:305
+msgid "Example Background"
+msgstr ""
+
+#: ../option.php:306
+msgid "Change the background CSS."
+msgstr ""
+
+#: ../option.php:313
+msgid "Multicheck"
+msgstr ""
+
+#: ../option.php:314
+msgid "Multicheck description."
+msgstr ""
+
+#: ../option.php:322
+msgid "Colorpicker"
+msgstr ""
+
+#: ../option.php:323
+msgid "No color selected by default."
+msgstr ""
+
+#: ../option.php:330
+msgid "Typography"
+msgstr ""
+
+#: ../option.php:331
+msgid "Example typography."
+msgstr ""
+
+#: ../option.php:338
+msgid "Custom Typography"
+msgstr ""
+
+#: ../option.php:339
+msgid "Custom typography options."
+msgstr ""
+
+#: ../option.php:347
+msgid "Text Editor"
+msgstr ""
+
+#: ../option.php:365
+msgid "Default Text Editor"
+msgstr ""
+
+#: ../option.php:366
+#, php-format
+msgid ""
+"You can also pass settings to the editor.  Read more about wp_editor in <a "
+"href=\"%1$s\" target=\"_blank\">the WordPress codex</a>"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:10
+msgid "汇聚全球法律资源"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:10
+msgid "助您轻松行走天下"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:19
+msgid "法律求助"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:20
+msgid "律师登记"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:23
+msgid "登录"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:25
+msgid "退出"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:43
+msgid "电话:"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:43
+msgid "phone number xxxx"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:43
+msgid "或"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:51
+msgid "首页"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:85
+msgid "律师联络"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:180
+msgid "海内外法律"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:194
+msgid "资讯动态"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:206
+msgid "合作律师"
+msgstr ""
+
+#: ../templates/common/site-header.blade.php:220
+msgid "会员服务"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:12
+msgid "欢迎光临法律同音"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:12
+msgid "为您轻松解决国际法律问题"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:15
+msgid ""
+"法律同音专注于搭建海内外法律事务<br>共享与沟通平台, <span class=\"accent-"
+"color\">让法律与您轻松随行</span>"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:19
+msgid ""
+"法律同音的互联网及手机平台提供给海内外律师及客户一个供需的平台，律师们可以"
+"更容易找到客户，客户可以更容易找到合适律师。平台通过翻译和高科技为法律行业"
+"服务，打破海内外地域及语言的阻隔。中国律师可以更容易串连海外同寅，海外律师"
+"也可以在中国寻找到合作伙伴。"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:21
+msgid ""
+"我们可以协助海外及国内的律师根据自己业务的性质互相串连，为本土及海外的客户"
+"提供更好的服务。这个全面包括了网上的广告，定时的可视会议，互相的拜访，及共"
+"同举办有关座谈及研讨会。提供会议系统并即时传译。按各地区法律条文，针对涉外"
+"应用，作出䋄上解释和培训。比如中国自由行消费者到香港购物，受什么消费者法律"
+"保护。到英国追债有那些法律可依，法律程序如何........."
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:44
+msgid "查看全部"
+msgstr ""
+
+#: ../templates/content/front-page.blade.php:46
+msgid "法律资讯"
+msgstr ""
+
+#: ../templates/includes/comments.blade.php:18
+#, php-format
+msgid "One Response to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Responses to &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../templates/includes/entry-meta.blade.php:4
+msgid "Edit"
+msgstr ""
+
+#: ../templates/searchform.blade.php:2
+msgid "Search for:"
+msgstr ""
+
+#: ../templates/searchform.blade.php:4 ../templates/searchform.blade.php:6
+msgid "Search"
+msgstr ""

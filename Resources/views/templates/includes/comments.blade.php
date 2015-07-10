@@ -2,20 +2,14 @@
     return;
 @endif
 
-<?php
-global $postid;
-$postid = get_the_ID();
-$comments = get_comments(array(
-        'post_id' => $postid,
-        'status'  => 'approve'
-));
-?>
+@eval(global $postid;$postid = get_the_ID();$comments = get_comments(array( 'post_id' => $postid, 'status' => 'approve'));)
+
 
 
 <section id="comments">
     @if ($comments)
-        <h3><?php printf(_n('One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'cutlass'),
-                    number_format_i18n(get_comments_number()), get_the_title()) ?></h3>
+        <h3>
+            {{ printf(_n('One Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'cutlass'), number_format_i18n(get_comments_number()), get_the_title()) }}</h3>
 
         <ol class="media-list">
             {{ wp_list_comments(array('walker' => new cutlass_Walker_Comment), $comments) }}
@@ -57,20 +51,17 @@ $comments = get_comments(array(
                 @if (is_user_logged_in())
                     <p>
                         Logged in as <a href="{{ get_option('siteurl') }}/wp-admin/profile.php">{{ $user_identity }}</a>
-                        <a href="{{ wp_logout_url(get_permalink()) }}"
-                           title="{{ _e('Log out of this account', 'cutlass') }}">{{ _e('Log out &raquo;', 'cutlass') }}</a>
+                        <a href="{{ wp_logout_url(get_permalink()) }}" title="{{ _e('Log out of this account', 'cutlass') }}">{{ _e('Log out &raquo;', 'cutlass') }}</a>
                     </p>
                 @else
-                    @define ($req = get_option('require_name_email'))
+                    @define $req = get_option('require_name_email')
                     <div class="form-group">
-                        <label for="author">{{ _e('Name', 'cutlass') }}
-                            @if($req) {{ _e(' [required]', 'cutlass') }} @endif
-                        </label>
-                        <input type="text" class="form-control" name="author" id="author" size="22" @if($req) {{'aria-required="true"'}} @endif>
+                        <label for="author">{{ _e('Name', 'cutlass'); if ($req) _e(' (required)', 'cutlass') }}</label>
+                        <input type="text" class="form-control" name="author" id="author" size="22" @if($req) echo 'aria-required="true"'; @endif>
                     </div>
                     <div class="form-group">
-                        <label for="email">{{ _e('Email (will not be published)', 'cutlass') }} @if ($req) {{ _e(' (required)', 'cutlass') }} @endif</label>
-                        <input type="email" class="form-control" name="email" id="email" size="22" @if ($req) {{ 'aria-required="true"' }} @endif>
+                        <label for="email">{{ _e('Email (will not be published)', 'cutlass'); if ($req) _e(' (required)', 'cutlass') }}</label>
+                        <input type="email" class="form-control" name="email" id="email" size="22" @if ($req) echo 'aria-required="true"'; @endif>
                     </div>
                     <div class="form-group">
                         <label for="url">{{ _e('Website', 'cutlass') }}</label>
