@@ -76,7 +76,7 @@
                                                         @eval($query->the_post())
                                                     <li class="item">
                                                         <div class="post-block format-standard">
-                                                            <a href="{{the_permalink()}}" class="media-box post-image">{{get_thumb('337x225')}}</a>
+                                                            <a href="{{the_permalink()}}" class="media-box post-image">@eval( echo get_thumb('337x225'); )</a>
 
                                                             <div class="post-actions">
                                                                 <div class="post-date">{{the_date()}}</div>
