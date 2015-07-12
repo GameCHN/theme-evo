@@ -129,6 +129,9 @@ class ThemeManager
             return $content;
         });
 
+        require __DIR__ . '/Includes/admin/theme-options.php';
+
+
     }
 
 
