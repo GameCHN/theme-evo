@@ -6,6 +6,39 @@
 if (!function_exists('optionsframework_init')) {
 
 
+    /*********************************************************************************************
+     *
+     * Print objects
+     *********************************************************************************************/
+    /**
+     * @param $obj
+     */
+    function s5pr($obj)
+    {
+        echo "<pre style='clear:both'>";
+        print_r($obj);
+        echo "</pre>";
+    }
+
+    /*********************************************************************************************
+
+    Fix rel validation on category links
+
+    *********************************************************************************************/
+    add_filter('the_category', 'add_nofollow_cat');
+    function add_nofollow_cat($text)
+    {
+        $text = str_replace('rel="category tag"', "", $text);
+        return $text;
+    }
+
+    add_theme_support('post-thumbnails');
+    set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
+    add_image_size('single-post-thumbnail', 170, 170, true);
+    add_image_size('portfolio-item-small', 300, 250, true);
+
+
+
     define('OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/admin/');
     define('OPTIONS_FRAMEWORK_DIRECTORY', __DIR__ . '/');
     //get_template_directory() . '/Includes/admin/'
