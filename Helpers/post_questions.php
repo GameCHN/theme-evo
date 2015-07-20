@@ -6,13 +6,23 @@
 
 (new question_post())->register();
 
+/**
+ * Class question_post
+ */
 class question_post
 {
 
-    var $name = '法律咨询';
+    var $name          = '法律咨询';
     var $singular_name = '法律咨询';
-    var $id = 'question';
-    var $menu_name = '法律咨询';
+    var $id            = 'question';
+    var $menu_name     = '法律咨询';
+
+    function __construct()
+    {
+        $this->name = __($this->name);
+        $this->singular_name = __($this->singular_name);
+        $this->menu_name = __($this->menu_name);
+    }
 
     function register()
     {
@@ -22,49 +32,49 @@ class question_post
 
         add_action('init', function () {
             $labels = array(
-                'name' => _x($this->name, 'post type 名称'),
-                'singular_name' => _x($this->singular_name, 'post type 单个 item 时的名称，因为英文有复数'),
-                'add_new' => _x('新建', '添加新内容的链接名称'),
-                'add_new_item' => __('新建一个' . $this->name),
-                'edit_item' => __('编辑' . $this->name),
-                'new_item' => __('新' . $this->name),
-                'all_items' => __('全部'),
-                'view_item' => __('查看' . $this->name),
-                'search_items' => __('搜索' . $this->name),
-                'not_found' => __('没有找到有关' . $this->name),
+                'name'               => _x($this->name, 'post type 名称'),
+                'singular_name'      => _x($this->singular_name, 'post type 单个 item 时的名称，因为英文有复数'),
+                'add_new'            => _x('新建', '添加新内容的链接名称'),
+                'add_new_item'       => __('新建一个' . $this->name),
+                'edit_item'          => __('编辑' . $this->name),
+                'new_item'           => __('新' . $this->name),
+                'all_items'          => __('全部'),
+                'view_item'          => __('查看' . $this->name),
+                'search_items'       => __('搜索' . $this->name),
+                'not_found'          => __('没有找到有关' . $this->name),
                 'not_found_in_trash' => __('回收站里面没有相关' . $this->name),
-                'parent_item_colon' => '',
-                'menu_name' => $this->menu_name,
+                'parent_item_colon'  => '',
+                'menu_name'          => $this->menu_name,
             );
 
             $args = array(
-                'labels' => $labels,
-                'description' => '我们网站的' . $this->name . '信息',
-                'public' => TRUE,
+                'labels'        => $labels,
+                'description'   => '我们网站的' . $this->name . '信息',
+                'public'        => true,
                 'menu_position' => 5,
-                'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
-                'has_archive' => TRUE
+                'supports'      => array('title', 'editor', 'thumbnail', 'excerpt', 'comments'),
+                'has_archive'   => true
             );
             register_post_type($this->id, $args);
         });
 
         add_action('init', function () {
             $labels = array(
-                'name' => _x($this->name . '分类', 'taxonomy 名称'),
-                'singular_name' => _x($this->singular_name . '分类', 'taxonomy 单数名称'),
-                'search_items' => __('搜索分类'),
-                'all_items' => __('所有分类'),
-                'parent_item' => __('该' . $this->name . '分类的上级分类'),
+                'name'              => _x($this->name . '分类', 'taxonomy 名称'),
+                'singular_name'     => _x($this->singular_name . '分类', 'taxonomy 单数名称'),
+                'search_items'      => __('搜索分类'),
+                'all_items'         => __('所有分类'),
+                'parent_item'       => __('该' . $this->name . '分类的上级分类'),
                 'parent_item_colon' => __('该' . $this->name . '分类的上级分类：'),
-                'edit_item' => __('编辑分类'),
-                'update_item' => __('更新分类'),
-                'add_new_item' => __('添加新分类'),
-                'new_item_name' => __('新分类'),
-                'menu_name' => __('分类'),
+                'edit_item'         => __('编辑分类'),
+                'update_item'       => __('更新分类'),
+                'add_new_item'      => __('添加新分类'),
+                'new_item_name'     => __('新分类'),
+                'menu_name'         => __('分类'),
             );
             $args = array(
-                'labels' => $labels,
-                'hierarchical' => TRUE,
+                'labels'       => $labels,
+                'hierarchical' => true,
             );
             register_taxonomy($this->id . '_category', $this->id, $args);
         }, 0);
@@ -73,14 +83,14 @@ class question_post
             global $post;
             switch ($column) {
                 case $this->id . "_recommend":
-                    echo get_post_meta($post->ID, $this->id . '_recommend', TRUE) ? '是' : '否';
+                    echo get_post_meta($post->ID, $this->id . '_recommend', true) ? '是' : '否';
                     break;
             }
         });
 
         add_filter("manage_edit-movie_columns", function ($columns) {
 
-            $columns[$this->id . '_recommend'] = '推荐';
+            $columns[ $this->id . '_recommend' ] = '推荐';
 
             return $columns;
         });
@@ -99,14 +109,15 @@ class question_post
                 // 创建临时隐藏表单，为了安全
                 wp_nonce_field('movie_director_meta_box', 'movie_director_meta_box_nonce');
                 // 获取之前存储的值
-                $value = get_post_meta($post->ID, '_question_name', TRUE);
+                $value = get_post_meta($post->ID, '_question_name', true);
 
                 ?>
 
                 <label for="question_name">名称:</label>
                 <input type="text" id="question_name" name="question_name" value="<?php echo esc_attr(meta('_question_name', $post->ID)); ?>" placeholder="">
                 <label for="question_address">地址:</label>
-                <input type="text" id="question_address" name="question_address" value="<?php echo esc_attr(meta('_question_address', $post->ID)); ?>" placeholder="">
+                <input type="text" id="question_address" name="question_address" value="<?php echo esc_attr(meta('_question_address', $post->ID)); ?>"
+                       placeholder="">
                 <?php
             }, $this->id, 'normal'/* 'side'*/, 'low');
         });
