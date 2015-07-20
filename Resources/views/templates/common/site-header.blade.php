@@ -27,7 +27,10 @@
                         <ul class="top-navigation sf-menu">
                             <li class="hide"><a href="/ask/question">{{ __('法律咨询') }}</a></li>
                             @if(!is_user_logged_in())
-                                {{-- wp_register() --}}
+                                {{-- wp_register()  --}}
+                            <li><a href="{{site_url('/wp-login.php?action=register&redirect_to=/wp-login.php?redirect_to=' . get_permalink())}}"
+                                   title="Register">{{__('会员注册')}}</a></li>
+                                <li><a href="{{wp_login_url('http://'.$_SERVER['SERVER_NAME'].$_SERVER["REQUEST_URI"])}}">{{__('登录')}}</a></li>
                             @else
                                 <li class="hide"><a href="/sns/ucenter/rankverify">{{ __('我是律师') }}</a></li>
                                 <li><a href="{{ wp_logout_url($_SERVER['REQUEST_URI']) }}">{{ __('退出') }}</a></li>
