@@ -5132,10 +5132,10 @@ h1.page-title {
     font-size: 14px;
 }
 
-.widget_categories ul li, .widget_archive ul li, .widget_recent_entries ul li, .widget_recent_comments ul li, .widget_links ul li, .widget_meta ul li {
-    border-bottom: 1px solid #eee;
-    border-bottom: 1px solid #9296BB;
-}
+/*.widget_categories ul li, .widget_archive ul li, .widget_recent_entries ul li, .widget_recent_comments ul li, .widget_links ul li, .widget_meta ul li {*/
+    /*border-bottom: 1px solid #eee;*/
+    /*border-bottom: 1px solid #9296BB;*/
+/*}*/
 
 
 .footer_widget.widget_categories ul li, .footer_widget.widget_archive ul li, .footer_widget.widget_recent_entries ul li, .footer_widget.widget_recent_comments ul li, .footer_widget.widget_links ul li, .footer_widget.widget_meta ul li {
@@ -7326,7 +7326,7 @@ input.wpcf7-form-control.wpcf7-submit {
 .widget a {
     color: #eee;
     display: block;
-    border-bottom: 1px solid #28272A;
+    /*border-bottom: 1px solid #28272A;*/
 }
 .widget_categories ul li {
     text-align: left;
