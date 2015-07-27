@@ -7343,3 +7343,7 @@ section.sidebar-wiget {
 .textwidget .fa {
     margin-right: 5px;
 }
+
+.byline.author.vcard {
+    display: none;
+}
