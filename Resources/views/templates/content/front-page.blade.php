@@ -45,13 +45,13 @@
                         <!-- Recently Listed Vehicles -->
 
                         <!-- 法律专题 start -->
-                        <div class="row box">
+                        <div class="row box hide">
                             {{-- yield('专题') --}}
                         </div>
                         <!-- 法律专题 end -->
 
                         <!-- 身边法律 start -->
-                        <div class="row box">
+                        <div class="row box hide">
                             {{-- yield('身边法律') --}}
                         </div>
                         <!-- 身边法律 end -->
@@ -356,7 +356,7 @@
                                     </div>
                                 </section>
                                 <div class="spacer-20"></div>
-                                <section class="listing-block latest-reviews">
+                                <section class="listing-block latest-reviews hide">
                                     <div class="listing-header">
                                         <a href="/lawyer" class="btn btn-sm btn-default pull-right">{{ __('查看全部') }}</a>
 
