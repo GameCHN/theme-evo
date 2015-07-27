@@ -152,7 +152,7 @@
                                 </section>
                                 <div class="spacer-40"></div>
 
-                                <section class="listing-block latest-testimonials">
+                                <section class="listing-block latest-testimonials hide">
                                     <div class="listing-header">
                                         <a href="/ask/question" class="btn btn-sm btn-default pull-right">{{ __('查看全部') }}</a>
 
