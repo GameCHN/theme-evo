@@ -63,7 +63,7 @@
                             <div class="col-md-8 col-sm-6">
                                 <section class="listing-block latest-news">
                                     <div class="listing-header">
-                                        <a href="{{ array_shift( ot_get_option('info_category',['/news']))}}" class="btn btn-sm btn-default pull-right">{{ __('查看全部') }}</a>
+                                        <a href="/news" class="btn btn-sm btn-default pull-right">{{ __('查看全部') }}</a>
 
                                         <h3>{{ ot_get_option('index_news_title') ?: __('法律资讯')}}</h3>
                                     </div>
