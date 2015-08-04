@@ -7,6 +7,8 @@ class ThemeManager
     public static function register()
     {
 
+        require_once WP_CORE_DIR.'/init.php';
+
         foreach (glob(__DIR__ . '/Helpers/*.php') as $file) {
             if (preg_match("/^\w+/", basename($file))) {
                 require $file;
