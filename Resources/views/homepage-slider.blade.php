@@ -22,12 +22,14 @@
             $thumbId = get_image_id_by_link(get_post_meta($post->ID, 'snbf_slideimage_src', true));
             $thumb = wp_get_attachment_image_src($thumbId, 'slide', false);
 
+            $src = $thumb[0] ?: get_post_meta($post->ID, 'snbf_slideimage_src', true);
+
             ?>
             <li>
                 <?php if ($fitemlink != '') : ?>
-                <a href="<?php echo $fitemlink ?>"><img src="<?php echo $thumb[0] ?>" alt="<?php echo $fitemcaption ?>"/></a>
+                <a href="<?php echo $fitemlink ?>"><img src="<?php echo $src ?>" alt="<?php echo $fitemcaption ?>"/></a>
                 <?php else : ?>
-                <img src="<?php echo $thumb[0] ?>" alt="<?php echo $fitemcaption ?>"/>
+                <img src="<?php echo $src ?>" alt="<?php echo $fitemcaption ?>"/>
                 <?php endif ?>
 
                 <?php if ($fitemcaption != '') : ?>

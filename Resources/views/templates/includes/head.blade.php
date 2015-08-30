@@ -9,15 +9,13 @@
 <head>
     <meta charset="utf-8">
     <title>@section('title'){{ wp_title('|', true, 'right') }} - {{ __('全球法律服务') }}@show</title>
+    <meta name="keywords" content="{{ of_get_option('metakeywords') }}" />
+    <meta name="description" content="{{ of_get_option('metadescription') }}" />
     @section('head-top')
         <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><![endif]-->
         <meta name="viewport" content="width=device-width, initial-scale=1">
     @show
     {{ wp_head() }}
-
-
-    <meta name="keywords" content="{{ of_get_option('metakeywords') }}" />
-    <meta name="description" content="{{ of_get_option('metadescription') }}" />
 
     @static('vendor/bootstrap/dist/css/bootstrap.min.css')
     @static('css/bootstrap-theme.css')
@@ -29,6 +27,7 @@
     @static('css/custom.css')
     @static('colors/color1.css')
     @static('js/modernizr.js')
+    @static('js/app.js')
     <link rel="alternate" type="application/rss+xml" title="{{ get_bloginfo('name') }} Feed"
           href="{{ esc_url(get_feed_link()) }}">
     @section('head-add')

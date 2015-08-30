@@ -4,11 +4,15 @@ use YCMS\Extensions\Func;
 
 Func::make("cutlass_title",function(){
 
+
+    function cutlass_title($title = ''){
+        return wp_trim_words(cutlass_title_full($title),30);
+    }
     /**
      * @param string $title
      * @return null|string|void
      */
-    function cutlass_title($title = '')
+    function cutlass_title_full($title = '')
     {
         if ($title) {
             return __($title);

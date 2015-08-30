@@ -5,7 +5,7 @@
 <div class="alert alert-warning">
     {{ _e('Sorry, no results were found.', 'cutlass') }}
 </div>
-{{ get_search_form(FALSE) }}
+{!! get_search_form(FALSE)  !!}
 @wpend
 @eval(global $wp_query;)
 

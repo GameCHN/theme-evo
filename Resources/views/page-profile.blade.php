@@ -4,7 +4,6 @@
 Template Name: Profile
 --}}
 
-
 @section('page-content')
 
 	@include('templates.content.page')

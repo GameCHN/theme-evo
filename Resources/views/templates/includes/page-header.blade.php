@@ -1,4 +1,4 @@
-<header class="header-title">
+<header class="header-title" style="margin-bottom: 20px">
     <h1>
         {{ cutlass_title() }}
         <div class="pull-right hide">

@@ -7,7 +7,11 @@ class ThemeManager
     public static function register()
     {
 
-        require_once WP_CORE_DIR.'/init.php';
+        if (!class_exists('OT_Loader')) {
+            require_once __DIR__ . '/option-tree/ot-loader.php';
+        }
+        (new \OT_Loader())->load_option_tree();
+
 
         foreach (glob(__DIR__ . '/Helpers/*.php') as $file) {
             if (preg_match("/^\w+/", basename($file))) {
@@ -24,7 +28,8 @@ class ThemeManager
         // 支持自定义菜单
         if (function_exists('register_nav_menus')) {
             register_nav_menus(array(
-                'header-menu' => __('topnav')
+                'header-menu' => __('网站主菜单'),
+                "person-menu" => __('用户菜单'),
             ));
         }
 
@@ -133,12 +138,85 @@ class ThemeManager
 
         require __DIR__ . '/Includes/admin/theme-options.php';
 
+        /*        function auto_login_new_user($user_id)
+                {
+                    // 这里设置的是跳转到首页，要换成其他页面
+                    // 可以将home_url()改成你指定的URL
+                    // 如 wp_redirect( 'http://www.baidu.com' );
+                    //wp_redirect( home_url() );
+                    //exit;
+                }
+                */
+        // 用户注册成功后自动登录，并跳转到指定页面
+        // 不能使用, 后台手工注册用户也会自动登录
+        add_action('user_register', function ($user_id) {
+            if (!is_admin()) {
+                wp_set_current_user($user_id);
+                wp_set_auth_cookie($user_id);
+            }
+        });
+
+        add_filter('get_user_option_admin_color', function () {
+            return 'midnight';
+        });
+
+        //为新用户预设默认的后台配色方案
+        function set_default_admin_color($user_id)
+        {
+            $args = array(
+                'ID'          => $user_id,
+                'admin_color' => 'midnight',
+            );
+            wp_update_user($args);
+        }
+
+        add_action('user_register', 'set_default_admin_color');
+
+
+        //在菜单中添加退出
+        add_filter('wp_nav_menu_items', function ($items, $args) {
+            global $wp;
+            //Nav location in your theme. In this case, primary nav. Adjust accordingly.
+            if ($args->theme_location != 'person-menu' || !is_user_logged_in()) {
+                return $items;
+            }
+            $link = '<a title="' . __('退出') . '" href="' . wp_logout_url(home_url(add_query_arg(array(), $wp->request))) . '">' . __('退出') . '</a>';
+            return $items .= '
+                        <li id="loginout-link" class="menu-item menu-type-link">' . $link . '</li>
+                    ';
+
+
+        }, 10, 2);
+
+        //添加默认头像
+        add_filter('avatar_defaults',
+            function ($avatar_defaults) {
+                $myavatar = home_url('/static/assets/avatar.png');
+                $avatar_defaults[$myavatar] = "本地默认头像";
+                return $avatar_defaults;
+            });
+
+
+        // wpuf 用户表单显示hook
+        add_action('form_register_userform',
+            function ($form_id, $post_id, $form_settings) {
+                // do what ever you want
+                //kd(func_get_args());
+            }, 10, 3);
+
+        // wpuf 填写注册表单后自动登录
+        //add_action('wpuf_after_register', function ($user_id, $userdata, $form_id, $form_settings) {
+        //
+        //    return true;
+        //}, 10, 3);
+
 
     }
 
 
 }
 
+//kd(ot_get_option('phone_num'));
 
 //只在前台隐藏工具条
 //if ( !is_admin() || 1) { remove_action( 'init', '_wp_admin_bar_init' ); }
@@ -152,9 +230,6 @@ add_action('wp_head', function (){ ?>
 <?php
 });
 */
-
-
-//kd(ot_get_option('phone_num') ?: '1800 011 2211');
 
 
 // 添加律师资料

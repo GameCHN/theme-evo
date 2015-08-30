@@ -20,8 +20,11 @@ if (!function_exists('optionsframework_init')) {
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'options-framework.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/contentvalidation.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/customfunctions.php');
-    require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/slider.post.type.php');
-    require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
+    if(current_user_can('level_10')){
+        require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/slider.post.type.php');
+        require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
+    }
+
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/pagination.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/widgets.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/wpnavmenu.php');
@@ -152,6 +155,7 @@ Func::make('optionsframework_options', function () {
 
             require(OPTIONS_DIRECTORY . 'general.php');
             require(OPTIONS_DIRECTORY . 'typography.php');
+
             require(OPTIONS_DIRECTORY . 'slider.php');
             require(OPTIONS_DIRECTORY . 'portfolio.php');
             require(OPTIONS_DIRECTORY . 'blog.php');

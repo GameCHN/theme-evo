@@ -6,6 +6,22 @@
  * Time: 上午5:08
  */
 
+/**
+ * @param            $name
+ * @param null       $default
+ * @param bool|false $write
+ */
+function option($name,$default = null,$write = false){
+    $ret = get_option($name,$default);
+    if(function_exists('of_get_option')){
+        $ret = of_get_option($name,$ret);
+    }
+    if(function_exists('ot_get_option')){
+        $ret = ot_get_option($name,$ret);
+    }
+    return $ret;
+}
+
 function items($option, $default = '')
 {
     $ret = [];
@@ -174,7 +190,12 @@ if (!function_exists('excerpt')):
     }
 endif;
 
-function meta($name, $post_id = null)
+function meta($name, $default = '', $post_id = null)
 {
-    return get_post_meta($post_id ?: get_the_ID(), $name, true);
+    $return = get_post_meta($post_id ?: get_the_ID(), $name, true);
+    return $return !== '' ? $return : $default;
+}
+
+function _url($url){
+    return home_url(option('url_'.str_replace('/','_',trim($url,'/')) ,$url));
 }

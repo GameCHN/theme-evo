@@ -21,10 +21,9 @@ if (!function_exists('optionsframework_init')) {
     }
 
     /*********************************************************************************************
-
-    Fix rel validation on category links
-
-    *********************************************************************************************/
+     *
+     * Fix rel validation on category links
+     *********************************************************************************************/
     add_filter('the_category', 'add_nofollow_cat');
     function add_nofollow_cat($text)
     {
@@ -36,7 +35,6 @@ if (!function_exists('optionsframework_init')) {
     set_post_thumbnail_size(100, 100, true); // Normal post thumbnails
     add_image_size('single-post-thumbnail', 170, 170, true);
     add_image_size('portfolio-item-small', 300, 250, true);
-
 
 
     define('OPTIONS_FRAMEWORK_URL', get_template_directory_uri() . '/admin/');
@@ -52,8 +50,11 @@ if (!function_exists('optionsframework_init')) {
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'options-framework.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/contentvalidation.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/customfunctions.php');
-    require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/slider.post.type.php');
-    require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
+    if(current_user_can('level_10')){
+        require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/slider.post.type.php');
+        require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
+    }
+
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/pagination.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/widgets.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/wpnavmenu.php');
@@ -83,8 +84,8 @@ if (!function_exists('of_get_option')) {
         if (get_option($option_name)) {
             $options = get_option($option_name);
         }
-        if (isset($options[ $name ])) {
-            return $options[ SN . $name ];
+        if (isset($options[$name])) {
+            return $options[SN . $name];
         } else {
             return $default;
         }
@@ -130,11 +131,31 @@ function optionsframework_options()
     $sliders = get_categories('taxonomy=sliders&type=featured');
     $sliders_tags_array[''] = 'Select a Slider';
     foreach ($sliders as $slider) {
-        $sliders_tags_array[ $slider->cat_ID ] = $slider->cat_name;
+        $sliders_tags_array[$slider->cat_ID] = $slider->cat_name;
     }
 
 
-    $numberofs_array = array("1" => "1", "2" => "2", "3" => "3", "4" => "4", "5" => "5", "6" => "6", "7" => "7", "8" => "8", "9" => "9", "10" => "10", "11" => "11", "12" => "12", "13" => "13", "14" => "14", "15" => "15", "16" => "16", "17" => "17", "18" => "18", "19" => "19", "20" => "20");
+    $numberofs_array = array("1"  => "1",
+                             "2"  => "2",
+                             "3"  => "3",
+                             "4"  => "4",
+                             "5"  => "5",
+                             "6"  => "6",
+                             "7"  => "7",
+                             "8"  => "8",
+                             "9"  => "9",
+                             "10" => "10",
+                             "11" => "11",
+                             "12" => "12",
+                             "13" => "13",
+                             "14" => "14",
+                             "15" => "15",
+                             "16" => "16",
+                             "17" => "17",
+                             "18" => "18",
+                             "19" => "19",
+                             "20" => "20"
+    );
 
     $robots_array = array(
         "none"                 => "none",
@@ -157,7 +178,7 @@ function optionsframework_options()
     $options_categories_obj = get_categories();
     $options_categories[''] = __('All Categories', 'site5framework');
     foreach ($options_categories_obj as $category) {
-        $options_categories[ $category->cat_ID ] = $category->cat_name;
+        $options_categories[$category->cat_ID] = $category->cat_name;
     }
 
     // Pull all the pages into an array
@@ -165,7 +186,7 @@ function optionsframework_options()
     $options_pages_obj = get_pages('sort_column=post_parent,menu_order');
     $options_pages[''] = __('Select a page:', 'site5framework');
     foreach ($options_pages_obj as $page) {
-        $options_pages[ $page->ID ] = $page->post_title;
+        $options_pages[$page->ID] = $page->post_title;
     }
 
 
@@ -190,6 +211,48 @@ function optionsframework_options()
         require(OPTIONS_DIRECTORY . 'footer.php');
         require(OPTIONS_DIRECTORY . 'thumbnails.php');
     }
+
+
+    static $saved_settings;
+    if (!function_exists('ot_settings_id') || !is_admin()) {
+        //nothing
+    } elseif (!isset($saved_settings) && 0) {
+        $saved_settings = get_option('option_tree_settings', array());
+        /* settings are not the same update the DB */
+        $ot = [];
+        foreach($options as $k => $v){
+            $v['section']     = 'general';
+            $ot[$k] = $v;
+        }
+        $custom_settings = array(
+            'contextual_help' => array(
+                 'content'       => array(
+                   array(
+                     'id'        => 'general_help',
+                     'title'     => 'General',
+                     'content'   => '<p>Help content goes here!</p>'
+                   )
+                 ),
+                 'sidebar'       => '<p>Sidebar content goes here!</p>',
+               ),
+               'sections'        => array(
+                 array(
+                   'id'          => 'general',
+                   'title'       => 'General'
+                 )
+               ),
+            "settings" => $ot
+        ) ;
+        if ($saved_settings !== $custom_settings) {
+            update_option('option_tree_settings', $custom_settings);
+        }
+
+
+        /* Lets OptionTree know the UI Builder is being overridden */
+        global $ot_has_custom_theme_options;
+        $ot_has_custom_theme_options = true;
+    }
+
 
     return $options;
 }

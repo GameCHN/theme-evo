@@ -38,10 +38,10 @@
                         <div class="users-sidebar tbssticky">
                             @if(is_user_logged_in())
                                 <ul class="list-group">
-                                    <li class="list-group-item {{ $leftact['user-dashboard']}}" active><span class="badge hide">5</span> <a href="/user-dashboard"><i class="fa fa-home"></i> {{ __('个人信息') }}</a></li>
-                                    <li class="list-group-item {{ $leftact['lawyer-profile']}}"><span class="badge hide">5</span> <a href="/lawyer-profile"><i class="fa fa-folder-o"></i> {{ __('律师资料') }}</a></li>
-                                    <li class="list-group-item {{ $leftact['user-posts']}}"><span class="badge ">12</span> <a href="/user-posts"><i class="fa fa-star-o"></i> {{ __('我的帖子') }}</a></li>
-                                    <li class="list-group-item {{ $leftact['user-reply']}}"><span class="badge ">12</span> <a href="/user-reply"><i class="fa fa-plus-square-o"></i> {{ __('我的回复') }}</a></li>
+                                    <li class="list-group-item {{ $leftact['profile']}}" active><span class="badge hide">5</span> <a href="{{ _url(Lawyer::is_public() ? 'lawyer-profile' : 'profile') }}"><i class="fa fa-home"></i> {{ __(Lawyer::is_public() ? '律师资料' : '个人信息') }}</a></li>
+                                    <li class="hide list-group-item {{ $leftact['lawyer-profile']}}"><span class="badge hide">5</span> <a href="/lawyer-profile"><i class="fa fa-folder-o"></i> {{ __('律师资料') }}</a></li>
+                                    <li class="hide list-group-item {{ $leftact['user-posts']}}"><span class="badge ">12</span> <a href="/user-posts"><i class="fa fa-star-o"></i> {{ __('我的帖子') }}</a></li>
+                                    <li class="hide list-group-item {{ $leftact['user-reply']}}"><span class="badge ">12</span> <a href="/user-reply"><i class="fa fa-plus-square-o"></i> {{ __('我的回复') }}</a></li>
                                     <li class="list-group-item"><span class="badge hide ">2</span> <a href="{{ wp_logout_url('/login') }}"><i class="fa fa-edit"></i> {{ __('退出') }}</a></li>
                                     <!--{demo}-->
                                     <li class="list-group-item"><a href="user-dashboard-profile.html"><i class="fa fa-user"></i> My Profile</a></li>
@@ -50,8 +50,10 @@
                                     <!--{/demo}-->
                                 </ul>
                             @else
-                                <a href="/register" class="btn btn-block btn-primary add-listing-btn">{{ __('注册新账号') }}</a>
-                                <a href="/login" class="btn btn-block btn-default add-listing-btn">{{ __('登录') }}</a>
+                                @eval($highlight = meta('highlight','member'))
+                                <a href="{{ _url('register') }}" class="btn btn-block {{ $highlight == 'member' ? 'btn-primary' : 'btn-default' }} add-listing-btn">{{ __('会员注册') }}</a>
+                                <a href="{{ _url('lawyer-registration') }}" class="btn btn-block {{ $highlight == 'lawyer' ? 'btn-primary' : 'btn-default' }} add-listing-btn">{{ __('律师登记') }}</a>
+                                <a href="{{ _url('login') }}" class="btn btn-block {{ $highlight == 'login' ? 'btn-primary' : 'btn-default' }} add-listing-btn">{{ __('登录') }}</a>
 
                             @endif
                         </div>

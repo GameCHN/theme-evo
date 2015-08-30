@@ -4,7 +4,10 @@
  * 2015/2/11@12:20 <post_contact.php>
  */
 
-(new question_post())->register();
+//if(current_user_can('level_10')){
+    (new question_post())->register();
+//}
+
 
 /**
  * Class question_post
