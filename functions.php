@@ -113,6 +113,30 @@ class ThemeManager
             }
         });
 
+        /*只能查看自己的文章评论*/
+
+        if (!current_user_can("edit_others_posts")) {
+            add_filter("comments_clauses", function ($clauses) {
+                if (is_admin()) {
+                    global $user_ID, $wpdb;
+                    $clauses["join"] = ", wp_posts";
+                    $clauses["where"] .= " AND wp_posts.post_author = " . $user_ID . " AND wp_comments.comment_post_ID = wp_posts.ID";
+                };
+                return $clauses;
+            });
+        }
+
+        /*只能查看自己发布的文章*/
+
+        add_filter("parse_query", function ($wp_query) {
+            if (strpos($_SERVER["REQUEST_URI"], "/wp-admin/edit.php") !== false) {
+                if (!current_user_can("add_user")) {
+                    global $current_user;
+                    $wp_query->set("author", $current_user->id);
+                }
+            }
+        });
+
         add_filter('the_content', function ($content) {
 
             if (!is_page()) {
