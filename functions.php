@@ -128,7 +128,7 @@ class ThemeManager
 
         /*只能查看自己发布的文章*/
 
-        add_filter("parse_query", function ($wp_query) {
+        add_filter("parse_query", function (\WP_Query $wp_query) {
             if (strpos($_SERVER["REQUEST_URI"], "/wp-admin/edit.php") !== false) {
                 if (!current_user_can("add_user")) {
                     global $current_user;
@@ -144,7 +144,7 @@ class ThemeManager
         //在文章编辑页面的[添加媒体]只显示用户自己上传的文件
 
 
-        add_action('pre_get_posts', function ($wp_query_obj) {
+        add_action('pre_get_posts', function (\WP_Query $wp_query_obj) {
             global $current_user, $pagenow;
             if (!is_a($current_user, 'WP_User')) {
                 return;
@@ -160,7 +160,7 @@ class ThemeManager
 
         //在[媒体库]只显示用户上传的文件
 
-        add_filter('parse_query', function ($wp_query) {
+        add_filter('parse_query', function (\WP_Query $wp_query) {
             if (strpos($_SERVER['REQUEST_URI'], '/wp-admin/upload.php') !== false) {
                 if (!current_user_can('manage_options') && !current_user_can('manage_media_library')) {
                     global $current_user;
@@ -169,6 +169,8 @@ class ThemeManager
             }
         });
 
+
+        // 为页面添加 Blade 解析功能
         add_filter('the_content', function ($content) {
 
             if (!is_page()) {
@@ -203,8 +205,11 @@ class ThemeManager
                     //exit;
                 }
                 */
+
+
         // 用户注册成功后自动登录，并跳转到指定页面
         // 不能使用, 后台手工注册用户也会自动登录
+
         add_action('user_register', function ($user_id) {
             if (!is_admin()) {
                 wp_set_current_user($user_id);
@@ -251,6 +256,13 @@ class ThemeManager
                 $avatar_defaults[$myavatar] = "本地默认头像";
                 return $avatar_defaults;
             });
+
+        add_filter('get_avatar', function ($url) {
+            if (preg_match("/gravatar\.com/", $url)) {
+                return preg_replace("/src\=\"(.+?)\"/", 'src="/static/assets/avatar.png"', $url);
+            }
+            return $url;
+        });
 
 
         // wpuf 用户表单显示hook

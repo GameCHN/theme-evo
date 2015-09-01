@@ -8,7 +8,7 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>@section('title'){{ wp_title('|', true, 'right') }} - {{ __('全球法律服务') }}@show</title>
+    <title>@section('title'){{ wp_title('|', true, 'right') }} - {{ __('对接涉外律师服务') }}@show</title>
     <meta name="keywords" content="{{ of_get_option('metakeywords') }}" />
     <meta name="description" content="{{ of_get_option('metadescription') }}" />
     @section('head-top')

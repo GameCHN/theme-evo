@@ -3,7 +3,7 @@
         <div class="row">
             <div class="footer_intro">
                 <div class="footer_logo"></div>
-                <p>{{ __('全球法律服务') }}</p>
+                <p>{{ __('对接涉外律师服务') }}</p>
                 <p> {{ __('One World, One Language.') }}</p>
             </div>
             <div class="footer_link hide">
