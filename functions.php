@@ -117,7 +117,7 @@ class ThemeManager
 
         if (!current_user_can("edit_others_posts")) {
             add_filter("comments_clauses", function ($clauses) {
-                if (is_admin()) {
+                if (is_admin() && 0) {
                     global $user_ID, $wpdb;
                     $clauses["join"] = ", wp_posts";
                     $clauses["where"] .= " AND wp_posts.post_author = " . $user_ID . " AND wp_comments.comment_post_ID = wp_posts.ID";
@@ -130,7 +130,7 @@ class ThemeManager
 
         add_filter("parse_query", function (\WP_Query $wp_query) {
             if (strpos($_SERVER["REQUEST_URI"], "/wp-admin/edit.php") !== false) {
-                if (!current_user_can("add_user")) {
+                if (!current_user_can("add_user") && 0) {
                     global $current_user;
                     $wp_query->set("author", $current_user->id);
                 }
@@ -145,6 +145,7 @@ class ThemeManager
 
 
         add_action('pre_get_posts', function (\WP_Query $wp_query_obj) {
+            return;
             global $current_user, $pagenow;
             if (!is_a($current_user, 'WP_User')) {
                 return;
@@ -162,7 +163,7 @@ class ThemeManager
 
         add_filter('parse_query', function (\WP_Query $wp_query) {
             if (strpos($_SERVER['REQUEST_URI'], '/wp-admin/upload.php') !== false) {
-                if (!current_user_can('manage_options') && !current_user_can('manage_media_library')) {
+                if (0 && !current_user_can('manage_options') && !current_user_can('manage_media_library')) {
                     global $current_user;
                     $wp_query->set('author', $current_user->id);
                 }
