@@ -7,16 +7,26 @@
         <div class="container sp-cont">
             <div class="site-logo">
                 <h1>
-                    <a href="/"><img src="@static('images/logo.png')" alt="Logo"></a>
+                    <a href="{{ home_url() }}"><img src="@static('images/logo.png')" alt="Logo"></a>
                 </h1>
-                <span class="site-tagline" style="display: none;">{{ __('汇聚全球法律资源') }}<br>{{ __('助您轻松行走天下') }}</span>
+                <span class="site-tagline" style="display: none;">
+                    {{ __('汇聚全球法律资源') }}
+                    <br>
+                    {{ __('助您轻松行走天下') }}
+                </span>
             </div>
 
             <div class="r-sou">
                 <div class="seek">
-                    <input type="text" value="{{ Input::get('s') ?: __('请输入搜索关键词') }}" onfocus="if(this.value == '{{ __('请输入搜索关键词') }}'){this.value = '';this.className = 'c8c focus';}" onblur="if(this.value == ''){this.value = '{{ __('请输入搜索关键词') }}';this.className = 'c8c';}" class="c8c"/>
+                    @eval($prompt = __('请输入搜索关键词'))
+                    <input type="text" value="{{ Input::get('s') ?: $prompt }}"
+                            onfocus="if(this.value == '{{ $prompt }}'){this.value = '';this.className = 'c8c focus';}"
+                            onblur="if(this.value == ''){this.value = '{{ $prompt }}';this.className = 'c8c';}"
+                            class="c8c"/>
                     <a class="s-btn" style="margin-right: 10px;"><i class="ico-top">{{ __('搜索') }}</i>&nbsp;</a>
-                    <a class="s-btn2" id="myquestion" href="/ask/question" style="border-left-width: 0px;  text-decoration: none; text-align: center; color: #fff; line-height: 36px; font-size: 14px;">我要提问</a>
+                    <a class="s-btn2" id="myquestion" href="/ask/question" style="border-left-width: 0px;  text-decoration: none; text-align: center; color: #fff; line-height: 36px; font-size: 14px;">
+                        {{ __('我要提问') }}
+                    </a>
                 </div>
             </div>
 
@@ -38,7 +48,7 @@
                     <div class="topnav dd-menu">
                         <ul class="top-navigation sf-menu">
                             <li class="hide">
-                                <a href="/ask/question">{{ __('法律咨询') }}</a>
+                                <a href="{{_url('ask/question')}}">{{ __('法律咨询') }}</a>
                             </li>
                             @if(!is_user_logged_in())
                                 {{-- wp_register()  --}}

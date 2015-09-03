@@ -1,0 +1,241 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Evo\n"
+"POT-Creation-Date: 2015-09-04 01:42+0800\n"
+"PO-Revision-Date: 2015-09-04 01:46+0800\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_HK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.1\n"
+"X-Poedit-Basepath: ../../\n"
+"X-Poedit-WPHeader: style.css\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2;lang\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: option-tree/assets/theme-mode\n"
+"X-Poedit-SearchPathExcluded-2: option-tree\n"
+"X-Poedit-SearchPathExcluded-3: __Assets\n"
+"X-Poedit-SearchPathExcluded-4: Includes\n"
+"X-Poedit-SearchPathExcluded-5: Helpers\n"
+
+#: Resources/views/searchform.blade.php:2
+msgid "Search for:"
+msgstr "搜索:"
+
+#: Resources/views/searchform.blade.php:4
+#: Resources/views/searchform.blade.php:6
+msgid "Search"
+msgstr "搜索"
+
+#: Resources/views/templates/common/site-header.blade.php:13
+msgid "汇聚全球法律资源"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:15
+msgid "助您轻松行走天下"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:21
+msgid "请输入搜索关键词"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:26
+msgid "搜索"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:28
+msgid "我要提问"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:36
+msgid "我的资料"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:51
+#: Resources/views/templates/content/front-page.blade.php:159
+msgid "法律咨询"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:57
+msgid "会员注册"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:60
+msgid "登录"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:64
+msgid "我是律师"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:67
+#: functions.php:245
+msgid "退出"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:87
+msgid "搜索法律条文 或 咨询律师"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:96
+msgid "首页"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:158
+msgid "律师联络"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:297
+msgid "海内外法律"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:322
+msgid "资讯动态"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:341
+msgid "合作律师"
+msgstr ""
+
+#: Resources/views/templates/common/site-header.blade.php:366
+msgid "会员服务"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:22
+msgid "欢迎光临法律同音"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:22
+msgid "为您轻松解决国际法律问题"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:25
+msgid ""
+"法律同音专注于搭建海内外法律事务<br>共享与沟通平台, <span class=\"accent-"
+"color\">让法律与您轻松随行</span>"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:29
+msgid ""
+"法律同音的互联网及手机平台提供给海内外律师及客户一个供需的平台，律师们可以更"
+"容易找到客户，客户可以更容易找到合适律师。平台通过翻译和高科技为法律行业服"
+"务，打破海内外地域及语言的阻隔。中国律师可以更容易串连海外同寅，海外律师也可"
+"以在中国寻找到合作伙伴。"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:31
+msgid ""
+"我们可以协助海外及国内的律师根据自己业务的性质互相串连，为本土及海外的客户提"
+"供更好的服务。这个全面包括了网上的广告，定时的可视会议，互相的拜访，及共同举"
+"办有关座谈及研讨会。提供会议系统并即时传译。按各地区法律条文，针对涉外应用，"
+"作出䋄上解释和培训。比如中国自由行消费者到香港购物，受什么消费者法律保护。到"
+"英国追债有那些法律可依，法律程序如何........."
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:40
+msgid "nothing"
+msgstr "无内容"
+
+#: Resources/views/templates/content/front-page.blade.php:66
+#: Resources/views/templates/content/front-page.blade.php:157
+#: Resources/views/templates/content/front-page.blade.php:306
+#: Resources/views/templates/content/front-page.blade.php:328
+#: Resources/views/templates/content/front-page.blade.php:361
+msgid "查看全部"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:68
+msgid "法律资讯"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:96
+msgid "Posted in:"
+msgstr "发表于:"
+
+#: Resources/views/templates/content/front-page.blade.php:181
+msgid "个回复"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:234
+msgid "律师介绍"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:308
+#: Resources/views/templates/content/front-page.blade.php:330
+msgid "法律讲座视频"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:321
+msgid "请添加 law-video 类别文章"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:363
+msgid "律师资料"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:431
+msgid "Connect with us"
+msgstr "联系我们"
+
+#: Resources/views/templates/content/front-page.blade.php:434
+msgid "Email"
+msgstr "邮箱"
+
+#: Resources/views/templates/content/front-page.blade.php:436
+msgid "Subscribe"
+msgstr "订阅"
+
+#: Resources/views/templates/content/front-page.blade.php:437
+msgid "Don't worry, we won't spam you"
+msgstr "别担心, 我们只投放必要的邮件"
+
+#: Resources/views/templates/content/front-page.blade.php:440
+msgid "Twitter feed"
+msgstr ""
+
+#: Resources/views/templates/content/front-page.blade.php:453
+msgid "Search by make"
+msgstr "搜索"
+
+#: Resources/views/templates/content/front-page.blade.php:454
+msgid "All make &amp; models"
+msgstr ""
+
+#: functions.php:31
+msgid "网站主菜单"
+msgstr ""
+
+#: functions.php:32
+msgid "用户菜单"
+msgstr ""
+
+#: functions.php:257
+msgid "本地默认头像"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Evo"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://cutlasswp.com"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "abc"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Zach Adams"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://zach-adams.com/"
+msgstr ""

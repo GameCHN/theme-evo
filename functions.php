@@ -254,7 +254,7 @@ class ThemeManager
         add_filter('avatar_defaults',
             function ($avatar_defaults) {
                 $myavatar = home_url('/static/assets/avatar.png');
-                $avatar_defaults[$myavatar] = "本地默认头像";
+                $avatar_defaults[$myavatar] = __("本地默认头像");
                 return $avatar_defaults;
             });
 

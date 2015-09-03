@@ -1,6 +1,6 @@
 @include('templates.content.index.ShenBianFaLv')
 @include('templates.content.index.ZhuanTi')
-
+{{-- <? --}}
 @section('page-content')
     <div class="main" role="main">
         <div id="content" class="content full padding-b0">

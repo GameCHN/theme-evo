@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Evo\n"
 "POT-Creation-Date: 2015-09-04 01:42+0800\n"
-"PO-Revision-Date: 2015-09-04 01:47+0800\n"
+"PO-Revision-Date: 2015-09-04 01:43+0800\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: zh_HK\n"
@@ -27,12 +27,12 @@ msgstr ""
 
 #: Resources/views/searchform.blade.php:2
 msgid "Search for:"
-msgstr "搜索:"
+msgstr ""
 
 #: Resources/views/searchform.blade.php:4
 #: Resources/views/searchform.blade.php:6
 msgid "Search"
-msgstr "搜索"
+msgstr ""
 
 #: Resources/views/templates/common/site-header.blade.php:13
 msgid "汇聚全球法律资源"
@@ -44,7 +44,7 @@ msgstr ""
 
 #: Resources/views/templates/common/site-header.blade.php:21
 msgid "请输入搜索关键词"
-msgstr ""
+msgstr "請輸入搜索關鍵詞"
 
 #: Resources/views/templates/common/site-header.blade.php:26
 msgid "搜索"
@@ -52,11 +52,11 @@ msgstr ""
 
 #: Resources/views/templates/common/site-header.blade.php:28
 msgid "我要提问"
-msgstr ""
+msgstr "我要提問"
 
 #: Resources/views/templates/common/site-header.blade.php:36
 msgid "我的资料"
-msgstr ""
+msgstr "我的資料"
 
 #: Resources/views/templates/common/site-header.blade.php:51
 #: Resources/views/templates/content/front-page.blade.php:159
@@ -141,7 +141,7 @@ msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:40
 msgid "nothing"
-msgstr "无内容"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:66
 #: Resources/views/templates/content/front-page.blade.php:157
@@ -157,7 +157,7 @@ msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:96
 msgid "Posted in:"
-msgstr "发表于:"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:181
 msgid "个回复"
@@ -182,19 +182,19 @@ msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:431
 msgid "Connect with us"
-msgstr "联系我们"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:434
 msgid "Email"
-msgstr "邮箱"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:436
 msgid "Subscribe"
-msgstr "订阅"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:437
 msgid "Don't worry, we won't spam you"
-msgstr "别担心, 我们只投放必要的邮件"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:440
 msgid "Twitter feed"
@@ -202,7 +202,7 @@ msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:453
 msgid "Search by make"
-msgstr "搜索"
+msgstr ""
 
 #: Resources/views/templates/content/front-page.blade.php:454
 msgid "All make &amp; models"
