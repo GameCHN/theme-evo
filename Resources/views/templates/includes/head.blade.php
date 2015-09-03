@@ -26,6 +26,7 @@
     <!--[if lte IE 9]>@static('css/ie.css')<![endif]-->
     @static('css/custom.css')
     @static('colors/color1.css')
+    @static('locale/__LANG__.css')
     @static('js/modernizr.js')
     @static('js/app.js')
     <link rel="alternate" type="application/rss+xml" title="{{ get_bloginfo('name') }} Feed"
