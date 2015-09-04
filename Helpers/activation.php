@@ -24,13 +24,17 @@ function cutlass_theme_activation_options_add_page() {
   $cutlass_activation_options = cutlass_get_theme_activation_options();
 
   if (!$cutlass_activation_options) {
-    $theme_page = add_theme_page(
-      __('Theme Activation', 'cutlass'),
-      __('Theme Activation', 'cutlass'),
-      'edit_theme_options',
-      'theme_activation_options',
-      'cutlass_theme_activation_options_render_page'
-    );
+      /** @todo  星期五[1536]2015-09-04/15:39:07.051+0800 @foolant */
+      if(current_user_can('manage_options')){
+          $theme_page = add_theme_page(
+                __('Theme Activation', 'cutlass'),
+                __('Theme Activation', 'cutlass'),
+                'edit_theme_options',
+                'theme_activation_options',
+                'cutlass_theme_activation_options_render_page'
+              );
+      }
+
   } else {
     if (is_admin() && isset($_GET['page']) && $_GET['page'] === 'theme_activation_options') {
       flush_rewrite_rules();

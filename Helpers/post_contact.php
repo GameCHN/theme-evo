@@ -17,6 +17,11 @@ class contact_post
     var $menu_name = '律师资料';
     function register(){
 
+        $this->name = __('律师资料');
+        $this->singular_name = __('律师资料');
+        $this->menu_name = __('律师资料');
+
+
         # 自定义文章类型
         # http://blog.wpjam.com/article/wordpress-post-type/
 

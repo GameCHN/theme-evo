@@ -50,9 +50,9 @@ if (!function_exists('optionsframework_init')) {
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'options-framework.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/contentvalidation.php');
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/customfunctions.php');
-    if(current_user_can('level_10')){
+    if(current_user_can('manage_options')){
         require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/slider.post.type.php');
-        require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
+        //require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/portfolio.post.type.php');
     }
 
     require_once(OPTIONS_FRAMEWORK_DIRECTORY . 'inc/pagination.php');

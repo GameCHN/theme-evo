@@ -37,9 +37,21 @@ Custom Admin Login Logo
 
 *********************************************************************************************/
 function custom_login_logo() {
+    //of_get_option('logo')
     if ( !of_get_option('logo')== '') {
     echo '<style type="text/css">
-    #login h1 a {background-image: url('.of_get_option('logo').') !important; background-size: auto !important; height: 180px;  }
+    #login {width:820px;}
+    #login h1 a {
+        background-image: url('.get_template_directory_uri().'/images/logo.png'.') !important;
+        background-size: auto !important;
+        height: 180px;
+        height: 220px;
+        width: 800px;
+        }
+        .login form {
+            width: 300px;
+            margin: 20px auto;
+            }
     </style>';
     }
 }

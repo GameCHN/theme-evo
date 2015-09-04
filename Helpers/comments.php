@@ -57,10 +57,16 @@ class cutlass_Walker_Comment extends Walker_Comment {
   }
 }
 
+
+
 function cutlass_get_avatar($avatar, $type) {
   if (!is_object($type)) { return $avatar; }
 
   $avatar = str_replace("class='avatar", "class='avatar pull-left media-object", $avatar);
+  if(strpos($avatar,'gravatar.com')){
+      $avatar = preg_replace("/src\=\"(.+?)\"/",'src="/static/assets/avatar.png"',$avatar);
+  }
+
   return $avatar;
 }
 add_filter('get_avatar', 'cutlass_get_avatar', 10, 2);

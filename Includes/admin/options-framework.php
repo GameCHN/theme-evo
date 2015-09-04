@@ -138,6 +138,11 @@ function optionsframework_setdefaults() {
 if ( !function_exists( 'optionsframework_add_page' ) ) {
 function optionsframework_add_page() {
 
+    /** @todo  星期五[1536]2015-09-04/15:28:09.244+0800 @foolant */
+    if(!current_user_can('manage_options')){
+        return false;
+    }
+
 	$of_page = add_menu_page('Theme Options', 'Theme Options', 'edit_theme_options', 'options-framework','optionsframework_page');
 
 	// Adds actions to hook in the required css and javascript
@@ -352,6 +357,12 @@ function of_get_option($name, $default = false) {
 add_action( 'wp_before_admin_bar_render', 'optionsframework_adminbar' );
 
 function optionsframework_adminbar() {
+
+
+    if(!current_user_can('manage_options')){
+        return false;
+    }
+
 
 	global $wp_admin_bar;
 

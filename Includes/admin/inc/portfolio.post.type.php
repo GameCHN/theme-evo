@@ -91,10 +91,10 @@ function wpt_portfolio_icons() {
     ?>
     <style type="text/css" media="screen">
         #menu-posts-portfolio .wp-menu-image {
-            background: url(<?php echo get_template_directory_uri(); ?>/admin/images/portfolio-icon.png) no-repeat 6px 6px !important;
+            /*background: url(*/<?php //echo get_template_directory_uri(); ?>/*/admin/images/portfolio-icon.png) no-repeat 6px 6px !important;*/
         }
         #menu-posts-portfolio:hover .wp-menu-image, #menu-posts-portfolio.wp-has-current-submenu .wp-menu-image {
-            background-position:6px -16px !important;
+            /*background-position:6px -16px !important;*/
         }
         #icon-edit.icon32-posts-portfolio {background: url(<?php echo get_template_directory_uri(); ?>/admin/images/portfolio-32x32.png) no-repeat;}
     </style>

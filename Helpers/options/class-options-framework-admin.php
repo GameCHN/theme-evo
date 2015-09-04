@@ -82,6 +82,11 @@ class Options_Framework_Admin {
 	 */
 	static function menu_settings() {
 
+        /** @todo  星期五[1536]2015-09-04/15:16:12.519+0800 @foolant */
+        if(!current_user_can('manage_options')){
+            return false;
+        }
+
 		$menu = array(
 
 			// Modes: submenu, menu
