@@ -8,7 +8,8 @@
 <!--<![endif]-->
 <head>
     <meta charset="utf-8">
-    <title>@section('title'){{ wp_title('|', true, 'right') }} - {{ __('对接涉外律师服务') }}@show</title>
+    <base href="/" target="_top">
+    <title>@section('title'){{ wp_title(' | ', true, 'right') }} - {{ get_bloginfo( 'description', __('对接涉外律师服务')  ) }}@show</title>
     <meta name="keywords" content="{{ of_get_option('metakeywords') }}" />
     <meta name="description" content="{{ of_get_option('metadescription') }}" />
     @section('head-top')
@@ -29,6 +30,8 @@
     @static('locale/__LANG__.css')
     @static('js/modernizr.js')
     @static('js/app.js')
+    {{ Asset::styles() }}
+    {{ Asset::scripts() }}
     <link rel="alternate" type="application/rss+xml" title="{{ get_bloginfo('name') }} Feed"
           href="{{ esc_url(get_feed_link()) }}">
     @section('head-add')
