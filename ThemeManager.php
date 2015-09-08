@@ -1,5 +1,7 @@
 <?php namespace YC\Evo;
 
+use YC\Evo\Widgets\BaseWidget;
+
 /**
  * Created by PhpStorm.
  * User: Mo
@@ -8,8 +10,7 @@
  */
 class ThemeManager
 {
-    public static function register()
-    {
+    public function register() {
 
         if (!class_exists('OT_Loader')) {
             require_once __DIR__ . '/option-tree/ot-loader.php';
@@ -34,7 +35,7 @@ class ThemeManager
             register_nav_menus(array(
                 'header-menu' => __('网站主菜单'),
                 "person-menu" => __('用户菜单'),
-                "profile" => __('用户资料侧边栏'),
+                "profile"     => __('用户资料侧边栏'),
             ));
         }
 
@@ -94,11 +95,11 @@ class ThemeManager
         });
 
         add_filter('excerpt_more', function ($more) {
-            return option('excerpt_more',' ...') ;
+            return option('excerpt_more', ' ...');
         });
 
         add_filter('excerpt_length', function ($length) {
-            return option('excerpt_length',200);
+            return option('excerpt_length', 200);
         });
 
         //apply_filters('logout_url', 'my_fixed_wp_logout_url');
@@ -115,7 +116,6 @@ class ThemeManager
             }
             return $translated;
         }, 10, 3);
-
 
 
         //让主题支持语言包
@@ -160,7 +160,7 @@ class ThemeManager
 
 
         add_action('pre_get_posts', function (\WP_Query $wp_query_obj) {
-            if(current_user_can("edit_others_posts")){
+            if (current_user_can("edit_others_posts")) {
                 return;
             }
             global $current_user, $pagenow;
@@ -189,30 +189,48 @@ class ThemeManager
 
 
         // 为页面添加 Blade 解析功能
+        /** @todo 修复模板解析
+         * 格式: <pre tpl="section_name">...</pre>
+         * 或者: <pre tpl>...</pre>
+         * 星期三[1537]2015-09-09/06:01:58.221+0800 @foolant
+         */
         add_filter('the_content', function ($content) {
 
             if (!is_page()) {
                 return $content;
             }
 
-            $generated = \Blade::compileString($content);
-
-            ob_start();
             extract($GLOBALS, EXTR_SKIP);
+            extract(\View::getShared());
 
-            try {
-                eval("?>" . $generated);
-            } catch (\Exception $e) {
-                ob_get_clean();
-                throw $e;
+            if (preg_match_all("/\s*<pre[^>]+tpl(\=(\")?(\w+)\\2)?[^>]*?>(.+?)<\/pre>\s*/s", $content, $ms, PREG_SET_ORDER)) {
+
+                foreach ($ms as $match) {
+                    list($all, $tplsign, $t, $tpl, $code) = $match;
+                    if ($tpl) {
+                        $code = "@section('$tpl')\n$code\n@endsection";
+                    }
+                    $generated = \Blade::compileString($code);
+
+
+                    ob_start();
+                    try {
+                        eval("?>" . $generated);
+                    } catch (\Exception $e) {
+                        ob_get_clean();
+                        throw $e;
+                    }
+                    $result = ob_get_clean();
+                    $content = str_replace($all, $result, $content);
+                }
             }
 
-            $content = ob_get_clean();
 
             return $content;
         });
 
-        require __DIR__ . '/Includes/admin/theme-options.php';
+
+        require __DIR__ . '/Helpers/admin/theme-options.php';
 
         /*        function auto_login_new_user($user_id)
                 {
@@ -240,8 +258,7 @@ class ThemeManager
         });
 
         //为新用户预设默认的后台配色方案
-        function set_default_admin_color($user_id)
-        {
+        function set_default_admin_color($user_id) {
             $args = array(
                 'ID'          => $user_id,
                 'admin_color' => 'midnight',
@@ -296,23 +313,31 @@ class ThemeManager
         //    return true;
         //}, 10, 3);
 
+        /** @todo 注册小部件 星期一[1537]2015-09-07/16:15:45.814+0800 @foolant */
+        $this->registerWidgets();
+
 
     }
 
-    public static function listMenuItems($menu_name){
+    public static function listMenuItems($menu_name) {
         $menu_items = [];
-        if ( ( $locations = get_nav_menu_locations() ) && isset( $locations[ $menu_name ] ) ) {
+        if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) {
             $menu = wp_get_nav_menu_object($locations[$menu_name]);
 
             $menu_items = wp_get_nav_menu_items($menu->term_id);
         }
-        foreach($menu_items as $k => $v){
+        foreach ($menu_items as $k => $v) {
             $attr = [];
-            parse_str($v->attr_title,$attr);
+            parse_str($v->attr_title, $attr);
             $menu_items[$k]->attr = $attr;
         }
 
         return $menu_items;
+    }
+
+
+    public function registerWidgets() {
+        BaseWidget::register();
     }
 
 

@@ -8,11 +8,9 @@ Template Name: 用户资料
 
 @section('page-content')
 
-
-
     @include('templates.content.page')
 
-    @eval($city = get_user_city();$leftact['profile']='active';)
+    @eval($city = get_user_city();$leftact=['profile'=>'active'];)
 
     <script type="text/javascript" src="/static/js/jquery.cityselect.js"></script>
     <div class="hide" id="city_select">
@@ -45,7 +43,9 @@ Template Name: 用户资料
 
 @endsection
 
+
 <?php
+
 function get_user_city()
 {
     if ($city = User::meta('from')) {

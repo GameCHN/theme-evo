@@ -1,4 +1,4 @@
-@layout('templates.layouts.base')
+@extends('templates.layouts.base')
 
 @section('header-extra')
     <div class="page-header parallax" style="background-image:url(/static/assets/images/top-catogory-2560.jpg);" default="http://placehold.it/1200x300&amp;text=51LAWFIRM">
@@ -39,8 +39,13 @@
 @endsection
 
 @section('content')
+
+
     <div id="content" class="content full">
         <div class="container">
+            <?php
+            $leftact = $leftact ?: [meta('highlight', 'none') => 'active'];
+            ?>
             <div class="row">
                 <!-- 边栏 start -->
                 <div class="col-md-3 sidebar" role="complementary">
@@ -63,13 +68,15 @@
                                     </li>
 
                                     @foreach(YC\Evo\ThemeManager::listMenuItems('profile') as $item)
-                                            <li class="list-group-item {{ $item->attr['active'] ? $leftact[$item->attr['active']] : '' }}"><a href="{{ $item->url }}"><i class="fa {{$item->attr['icon'] ?: 'fa-user'}}"></i> {{ $item->title }}</a> </li>
+                                        <li class="list-group-item {{ $item->attr['active'] ? $leftact[$item->attr['active']] : '' }}">
+                                            <a href="{{ $item->url }}"><i class="fa {{$item->attr['icon'] ?: 'fa-user'}}"></i> {{ $item->title }}</a>
+                                        </li>
                                     @endforeach
 
                                     <li class="list-group-item"><span class="badge hide ">2</span>
                                         <a href="{{ wp_logout_url(home_url()) }}"><i class="fa fa-edit"></i> {{ __('退出') }}</a>
                                     </li>
-                                            <!--{demo}-->
+                                    <!--{demo}-->
                                     <li class="list-group-item">
                                         <a href="user-dashboard-profile.html"><i class="fa fa-user"></i> My Profile</a>
                                     </li>
@@ -95,11 +102,13 @@
 
                 <!-- 边栏 end -->
                 <!-- 内容 start-->
+                @yield('before_content')
                 <div class="col-md-9 single-post main-content">
                     <div class="row box">
                         @yield('page-content')
                     </div>
                 </div>
+                @yield('after_content')
                 <!-- // 内容 end -->
 
             </div>

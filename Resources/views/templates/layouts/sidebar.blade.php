@@ -10,9 +10,11 @@
                 </div>
                 <!-- 边栏 end -->
                 <!-- 内容 start-->
+                @yield('before_content')
                 <div class="col-md-9 single-post main-content">
                     @yield('page-content')
                 </div>
+                @yield('after_content')
                 <!-- // 内容 end -->
 
             </div>

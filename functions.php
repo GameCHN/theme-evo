@@ -1,6 +1,6 @@
 <?php
 
-YC\Evo\ThemeManager::register();
+(new YC\Evo\ThemeManager)->register();
 
 
 
